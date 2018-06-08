@@ -99,7 +99,6 @@
         <?php
         if (isset($_POST['search_filtre'])) {
             foreach ($result as $unResultat) {
-                var_dump($_POST['type']);
                 include('vue_filtre_var.php');
                 if(isset($unResultat['surface_terrain']) && (isset($_POST["filter_cave"]) || isset($_POST['filter_grenier']) || !empty($_POST['filter_surface_du_terrain']))) {
                     if ($unResultat['statut'] === $filter_statut && $unResultat['ville'] === $filter_ville && $unResultat['surface'] === $filter_surface && $unResultat['piece'] === $filter_piece && $unResultat['prix'] <= $filter_prix_max && $unResultat['prix'] >= $filter_prix_min && $unResultat['surface_terrain'] === $filter_surface_terrain && $unResultat['cave'] == $filter_cave && $unResultat['grenier'] == $filter_grenier && $unResultat['chambre'] === $filter_chambre && $unResultat['eaux'] === $filter_eaux) {
